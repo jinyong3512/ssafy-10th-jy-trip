@@ -37,30 +37,23 @@
     - Local : Windows 10
     - AWS : Ubuntu 20.04.4 LTS
 - IDE
-    - IntelliJ IDE 2022.1.3
+    - STS 3.6.14
     - Visual Studio Code 1.70.0
-- UI / UX
-    - Figma
 - DataBase
     - MySQL workbench 8.0.20 (Windows 10)
     - MySQL 8.0.30 (Ubuntu 20.04.2 LTS)
 - CI/CD
-    - Docker 20.10.17
     - nginx
 
 ### 상세 스택
 - Backend
     - JAVA - openjdk 1.8.0_342
-    - Gradle 6.7
-    - SpringBoot 2.4.5, Quarydsl 4.4.0, Lombok 1.18.20, Swagger2 3.0.0
-    - Stomp 2.3.3-1
+    - Maven 3.5.3
+    - SpringBoot 2.4.5, Lombok 1.18.20, Swagger2 3.0.0
 - FrontEnd
     - HTML5, CSS3, JavaScript(ES6)
-    - React 18.2.0, face-api.js 0.22.2, Material-UI
-    - Node.js 16.16.0, npm 8.15.0
-    - stompjs 2.3.3
-- Web RTC
-    - openvidu-browser 2.22.0
+    - Vue 3, BootStrap
+    - Node.js 20.16.0, npm 8.15.0
 
 ### 협업 툴
 - 형상 관리 : Gitlab, Git
