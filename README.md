@@ -1,36 +1,65 @@
-# 여행 계획 짜기 JYTRIP (feat. 로그인에 대한 고찰)
+# 여행 계획 짜기 JYTRIP (feat. JWT에 대한 고찰)
 
-#  Overview
-
+## [JYTrip 홈페이지](https://jytrip.monster)
 
 # JYTRIP 서비스 화면
+## Member
+##### 회원가입 
+![회원가입](gif/register.gif)
+* 아이디, 닉네임 각각 중복 검사 [1 db access]
+* 비밀번호 패턴 매칭 확인 *패턴 매칭(대소문자 + 특수기호 + 숫자 10자리 이상)
+* 비밀번호 SHA-256 알고리즘으로 암호화해서 저장 => salt와 hashedPw Table 각각 분리 [2 db access]
+##### 로그인
+![로그인](gif/login.gif)
+* 암호화 비밀번호 확인 [2 db access]
+* accessToken과 refreshToken 발급 후 저장 [1 db access]
 
-### 로그인
+### Tour
+##### 여행
+![여행](gif/trip.gif)
+* OpenAPI 이용하여 여행지 검색 하기 
+* 여행지 내 목록에 추가 (Vue Pinia)  
+* 여행지 저장 [1 db access] [TokenInterceptor Check]
+* 여행지 불러오기 [1 db access] [TokenInterceptor Check]
 
+### Board
+##### 게시판
+![게시판](gif/board.gif)
+* 게시판 목록 보기 [1 db access]
+* 게시판 글 작성하기 [1 db access] [TokenInterceptor Check] 
 
-### 
+### 보안
+##### https
+![https](gif/https.gif)
+* 공인 CA 발급받은 SSL 인증서 실제 웹 환경에 적용
+* 같은 SSL 인증서를 nginx와 tomcat에 적용
+##### 토큰 만료
+![토큰 만료](gif/tokenExpired.gif)
+* refreshToken 만료 시 로그아웃 처리 [TokenInterceptor Check]
+##### 토큰 탈취 방어
+![토큰 탈취 방어](gif/tokenDefense.gif)
+* 토큰 자체가 탈취되었을 경우를 대비하여 로그인 시 ip를 저장 다른 ip로 토큰을 들고 올 시 로그아웃 처리 [TokenInterceptor Check]
 
+### JWT 탐구
+* JWT 토큰을 보통 VERIFY SIGNATRUE만 검사하여 변조되었는지 확인 함 하지만 이런 식이면 salt가 유출되거나 Token 자체가 유출되었을 때 문제가 됌
+* salt 유출 방어 -> DB에 TokenString을 직접 저장하여 비교 함으로 salt를 저장하지 않고 변조 확인과 동시에 내가 발급한 토큰인지까지 확인 가능
+* Token 자체 유출 방어 -> 토큰을 발급받은 ip가 아니고 토큰이 만료되기 전 다른 ip로 접근할 경우 로그아웃 처리
 
-### 
-
-
-### 게시판
-
-
-### 
-
-
-### 
-
+##### 보통 JWT
+![보통 JWT](png/normalJWT.png)
+##### 우리의 JWT
+![ourJWT](png/ourJWT.png)
+##### JWT 함수 Custom
+![CustomJWT](png/customJWT.png)
+* salt를 따로 저장하지 않기 때문에 기본 JJWT라이브러리를 사용할 수 없음 토큰 검증은 따로 하고 Payload를 읽기 위한 함수를 Custom 하여 사용
 
 
 #  주요 기능
-
 ### 서비스 소개
-
+* 알게 된 보안 기술을 실제 웹 환경에 적용
 
 ### 프로젝트 기능
-
+* blah blah~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### 개발환경
 - OS
@@ -60,6 +89,7 @@
 - 커뮤니케이션 : Notion, MatterMost, Webex
 
 ### 서비스 아키텍처
+![qwer](png/webArchitecture.png)
 
 
 ### Git 컨벤션
@@ -85,12 +115,15 @@ ex) 회원가입 기능
 ```
 
 ### EC2 포트 정리
-| --- | --- |
+| Port | 내용               |
+|-----|------------------|
 | 80 | nginx HTTP 기본 포트 |
-| 443 | nginx HTTPS |
-| 3306 | mysql |
-| 5173 | Vue app |
-| 8080 | Spring boot |
+| 443 | nginx HTTPS      |
+| 3306 | mysql            |
+| 5173 | Vue app          |
+| 8080 | Spring boot      |
 
 
 ### 팀원 역할
+* 김진용 : BackEnd Developer
+* 이주연 : FullStack Developer
