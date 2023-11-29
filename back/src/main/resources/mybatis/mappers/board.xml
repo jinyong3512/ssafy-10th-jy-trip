@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.jytrip.model.mapper.BoardMapper">
+
+	<select id="list" resultType="BoardDto">
+		select * from board
+	</select>
+
+	<insert id="write" parameterType="BoardDto">
+		insert into board
+		(nickname,subject, content)
+		values
+		(#{nickname}, #{subject}, #{content})
+	</insert>
+
+
+	<!-- <select id="detail" resultType="BoardDto" parameterType="int"> select 
+		* from board where articleNo = #{articleno} </select> -->
+
+	<!-- <delete id="delete" parameterType="int"> delete from board where articleNo 
+		= #{articleNo} </delete> -->
+
+	<!-- <update id="modify" parameterType="BoardDto"> update board set subject 
+		= #{subject}, content = #{content} where articleNo = #{articleNo} </update> -->
+
+
+</mapper>

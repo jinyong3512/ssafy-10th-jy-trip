@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.jytrip.model.mapper.TripMapper">
+
+	<insert id="saveTripList" parameterType="TripDto">
+		insert into trip
+		(title, firstimage, addr1, addr2, mapy, mapx, id) values
+		(#{title},#{firstimage},#{addr1},#{addr2},#{mapy}, #{mapx}, #{id})
+	</insert>
+	
+	<select id="getTripList" parameterType="String" resultType="TripDto">
+		select * from trip
+		where id=#{id}
+	</select>
+</mapper>

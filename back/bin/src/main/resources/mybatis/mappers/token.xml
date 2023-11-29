@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.jytrip.model.mapper.TokenMapper">
+
+	<insert id="saveToken" parameterType="TokenDto">
+		insert into
+		token
+		(ip,id,
+		refreshToken,
+		nickname, accessToken)
+		values
+		(#{ip},#{id},
+		#{refreshToken},
+		#{nickname},#{accessToken})
+		on
+		duplicate key
+		update
+		accessToken=#{accessToken},refreshToken=#{refreshToken},ip=#{ip}
+	</insert>
+
+	<select id="getTokenDto" parameterType="String"
+		resultType="TokenDto">
+		select * from
+		token where nickname = #{nickname}
+	</select>
+
+</mapper>
