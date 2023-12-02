@@ -60,15 +60,30 @@
 
 나아가 해당 서비스를 aws에 https를 적용하고 배포해보며, 기획부터 배포까지 현업 프로세스 전반에 관한 경험을 얻고자 하였고, 동시에 개발 환경이 아닌 실행 환경에서 jwt와 ip 검증이 유효한지 확인하였습니다.
 
-### 프로젝트 기능
-* 회원 가입
-  
-* 로그인
-  
-* 게시판
-  
-* 여행지 검색 및 저장
+### 프로젝트 기능별 다이어그램
+<details>
+  <summary>회원가입 및 로그인</summary>
 
+  * 클래스 다이어그램
+  ![image](https://github.com/Juyeori/JYTRIP/assets/98978787/31c1dcd8-b2d5-4bfc-b01a-4852e166be10)
+
+  * 시퀀스 다이어그램
+
+</details>
+
+<details>
+  <summary>게시판</summary>
+
+  * 클래스 다이어그램
+  * 시퀀스 다이어그램
+</details>
+
+<details>
+  <summary>여행지 검색 및 저장</summary>
+
+  * 클래스 다이어그램
+  * 시퀀스 다이어그램
+</details>
 
 ### 개발환경
 - OS
