@@ -1,8 +1,9 @@
-# 여행 계획 짜기 JYTRIP (feat. JWT에 대한 고찰)
+# 여행 계획 짜기 JYTrip (feat. JWT에 대한 고찰)
 
 ## [JYTrip 홈페이지](https://jytrip.monster)
+## [시연 영상](https://www.notion.so/jinyong3512/ssafy-travel-project-jytrip-3cf43aa7257a4f95b8620fb8a64e656c)
 
-# JYTRIP 서비스 화면
+# JYTrip 서비스 화면
 ## Member
 ##### 회원가입 
 ![회원가입](gif/register.gif)
