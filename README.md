@@ -1,7 +1,8 @@
-# 여행 계획 짜기 JYTrip (feat. JWT에 대한 고찰)
+# JYTrip 여행 계획 짜기 (feat. JWT에 대한 고찰)
 
 ## [JYTrip 홈페이지](https://jytrip.monster)
-## [시연 영상](https://www.notion.so/jinyong3512/ssafy-travel-project-jytrip-3cf43aa7257a4f95b8620fb8a64e656c)
+
+## [시연 영상](https://jinyong3512.notion.site/ssafy-10th-jy-trip-3cf43aa7257a4f95b8620fb8a64e656c?pvs=4)
 
 # JYTrip 서비스 화면
 ## Member
@@ -68,22 +69,6 @@
   * 클래스 다이어그램
   ![image](https://github.com/Juyeori/JYTRIP/assets/98978787/31c1dcd8-b2d5-4bfc-b01a-4852e166be10)
 
-  * 시퀀스 다이어그램
-
-</details>
-
-<details>
-  <summary>게시판</summary>
-
-  * 클래스 다이어그램
-  * 시퀀스 다이어그램
-</details>
-
-<details>
-  <summary>여행지 검색 및 저장</summary>
-
-  * 클래스 다이어그램
-  * 시퀀스 다이어그램
 </details>
 
 ### 개발환경
